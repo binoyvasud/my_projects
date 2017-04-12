@@ -24,11 +24,15 @@ from django.conf import settings
 import random
 import requests
 from django.http import Http404
+import logging
 
 #setting the base url
 APIURL = settings.API_URL
 COUNT  = settings.COUNT_MIN_LIMIT 
 COUNT_MAX  = settings.COUNT_MAX_LIMIT 
+
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
 
 # @author: Binoy
 # @create_date: 12-Apr-2017
@@ -99,12 +103,14 @@ def article_list(request):
             Exceptions
     """
     try:
+        logger.info('Calling the api' + APIURL  + '/articles/?format=json&limit=' + str(COUNT))
         response = requests.get(APIURL  + '/articles/?format=json&limit=' + str(COUNT))
         parser = json.loads(response.content)
         preview_article = random_article(parser)
         next_read = read_next()
         return render(request, 'article/article_list.html', {'articlelist':parser, 'preview_article': preview_article, 'next_read': next_read})
     except:
+        logger.error('Calling the api error in article_list')
         raise Http404("Article does not exist")
     
     
@@ -123,12 +129,14 @@ def article_detail(request, id):
             Exceptions 
     """
     try:
+        logger.info('Calling the api' + APIURL  + '/articles/' + id + '/?format=json')
         response = requests.get(APIURL  + '/articles/' + id + '/?format=json')
         parser = json.loads(response.content)
         images = article_images(id)
         next_read = read_next()
         return render_to_response('article/details.html', {'article':parser, 'next_read': next_read, 'related_images': images}, RequestContext(request))
     except:
+        logger.error('Calling the api error in article_detail')
         raise Http404("Article does not exist")
     
     
@@ -147,10 +155,12 @@ def article_images(id):
     """
     try:
         query_string = '&artile_id='+str(id)
+        logger.info('Calling the api' + APIURL  + '/images/?format=json'+query_string)
         response = requests.get(APIURL  + '/images/?format=json'+query_string)
         parser = json.loads(response.content)
         return parser
     except:
+        logger.error('Calling the api error in article_images')
         raise Http404("Article image does not exist")
      
 def random_article(article):
