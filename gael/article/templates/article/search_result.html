@@ -1,0 +1,42 @@
+<h2>{% block custom_breadcrumb%}Search Result{% endblock %}</h2>
+<div class="row" id="article-list">
+    <div class="col-lg-12">
+        <section class="panel">
+            <div class="panel-body">
+                <div class="tab-content">
+                    <div id="recent-activity" class="tab-pane active">
+                        <div class="profile-activity">
+                        {% for article in articlelist %}
+                            <div class="act-time">
+                                <div class="activity-body act-in">
+                                    <span class="arrow"></span>
+                                    <div class="text art-listing">
+                                        <div class="list-img">
+                                        <a href="{{base_url}}../{{article.id}}" class="activity-img">
+                                            <img class="avatar" src="{{article.hero_image}}" alt="My image"  width="100" height="100" alt=""/>
+                                        </a>
+                                        </div>
+                                        <div class="list-title">
+                                        <p class="attribution">
+                                            <a href="{{base_url}}../{{article.id}}">{{article.title|title}}</a>
+                                        </p>
+                                        <p>{{article.description|slice:":200"}}</p>
+                                        <p class="attribution">
+                                            <a href="{{base_url}}../{{article.id}}">Details</a>
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% empty %}
+                            <div class="act-time">
+                                <div class="activity-body act-in">No Data</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

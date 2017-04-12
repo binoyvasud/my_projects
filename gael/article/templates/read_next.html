@@ -1,0 +1,41 @@
+<script type="text/javascript" language="javascript">
+$(function() {
+    //  Scrolled by user interaction
+    $('#controles').carouFredSel({
+        auto : false,
+        prev : '#prev2',
+        next : '#next2',
+        pagination : "#pager2",
+        mousewheel : true,
+        swipe : {
+            onMouse : true,
+            onTouch : true
+        }
+    });
+});
+</script>
+<div id="next_read">
+    <div class="list_carousel">
+        <div class="control">
+            <div id="next-title">What to Read Next </div>
+            <div id="controls">
+                <a id="prev2" class="prev" href="#">&lt;</a>
+                <a id="next2" class="next" href="#">&gt;</a>
+            </div>
+        </div>
+        <div id="controles">
+            {% for next_item in next_read %}
+            <div class="read-items">
+                <a href="/{{next_item.id}}">
+                    <p class="read-img">
+                        <img src="{{next_item.hero_image}}" width="150" height="150" />
+                    </p>
+                    <p class="read-title">{{next_item.title|truncatewords:"3"}}</p>
+                </a>
+            </div>
+            {% empty %}
+                <div>No Item yet.</div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

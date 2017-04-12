@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+  <head>
+    <script src="{% static 'reactjs/build/react.js' %}"></script>
+    <script src="{% static 'reactjs/build/react-dom.js' %}"></script>
+    <script src="{% static 'reactjs/build/browser.min.js' %}"></script>
+    <script src="{% static 'reactjs/build/jquery.min.js' %}"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      ReactDOM.render(
+        <h1>Hello, worlccd!</h1>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

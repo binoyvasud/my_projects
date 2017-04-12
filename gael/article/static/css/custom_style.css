@@ -1,0 +1,250 @@
+.article-img {
+    float: left;
+    width: 14%;
+    border-radius: 50%;
+}
+
+.article-img img {
+    border-radius: 50%;
+}
+
+.article_pad {
+    padding: 10px;
+    padding-left: 0px;
+    float: left;
+    width: 100%;
+}
+
+.article-info {
+    float: left;
+    width: 86%
+}
+
+.article-title {
+    font-weight: bold;
+}
+
+#intro {
+    width: 580px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    background-color: white;
+    margin: 40px auto;
+    padding: 50px;
+    box-shadow: 0 0 5px #999;
+}
+
+.list_carousel {
+    background-color: #ccc;
+    width: 100%;
+}
+
+.list_carousel .caroufredsel_wrapper  div {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+}
+
+.list_carousel .caroufredsel_wrapper div {
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    padding: 0;
+    margin: 6px;
+    display: block;
+    float: left;
+}
+
+.list_carousel #controls {
+    display: block;
+    float: right;
+}
+
+.list_carousel.responsive {
+    width: auto;
+    margin-left: 0;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+.prev {
+    float: left;
+    margin-left: 10px;
+}
+
+.next {
+    float: right;
+    margin-right: 10px;
+}
+
+.pager {
+    float: left;
+    width: 300px;
+    text-align: center;
+}
+
+.pager a {
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.pager a.selected {
+    text-decoration: underline;
+}
+
+.timer {
+    background-color: #999;
+    height: 6px;
+    width: 0px;
+}
+
+#next_read {
+    
+}
+
+#article-list {
+    float: left;
+}
+
+.control {
+    float: left;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+#next-title {
+    float: left;
+    color: #797979;
+}
+
+.read-items {
+    background-color: #eee;
+    border: 1px solid #999;
+}
+
+.panel-body::after {
+    clear: none !important;
+}
+
+.preview-article {
+    color: #797979;
+    font-family: "Lato", sans-serif;
+    font-size: 14px !important;
+}
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+.read-img {
+	padding-top:5px;
+}
+
+.list-title {
+	float:left; 
+	width:90%;
+}
+.list-img {
+    float:left; 
+    width:10%;
+}
+
+.art-listing {
+	float:left;
+	width:100%;
+}
+
+.row {
+    padding-bottom: 5px;
+}
