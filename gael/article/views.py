@@ -177,6 +177,9 @@ def random_article(article):
             Exceptions
     """
     try:
+        #Checking the number of article
+        if len(article) == 0:
+            return []
         article_number = random.randint(0,len(article))
         article_number = int(article_number) - 1 
         return article[article_number]
